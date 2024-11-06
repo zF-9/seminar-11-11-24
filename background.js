@@ -144,7 +144,7 @@ function draw() {
 resize();
 draw();
 
-while (boxes.length < 43) {
+while (boxes.length < 88) {
     boxes.push(new Box());
 }
 
