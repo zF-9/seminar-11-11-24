@@ -18,8 +18,8 @@ function drawLight() {
     ctx.beginPath();
     ctx.arc(light.x, light.y, 1000, 0, 2 * Math.PI);
     var gradient = ctx.createRadialGradient(light.x, light.y, 0, light.x, light.y, 1000);
-    gradient.addColorStop(0, "#3b4654");
-    gradient.addColorStop(1, "#2c343f");
+    gradient.addColorStop(0, "#FFF");//"#3b4654");
+    gradient.addColorStop(1, "#fff");//"#2c343f");
     ctx.fillStyle = gradient;
     ctx.fill();
 
@@ -27,17 +27,17 @@ function drawLight() {
     ctx.arc(light.x, light.y, 20, 0, 2 * Math.PI);
     gradient = ctx.createRadialGradient(light.x, light.y, 0, light.x, light.y, 5);
     gradient.addColorStop(0, "#fff");
-    gradient.addColorStop(1, "#3b4654");
+    gradient.addColorStop(1, "#fff");//"#3b4654");
     ctx.fillStyle = gradient;
     ctx.fill();
 }
 
 function Box() {
-    this.half_size = Math.floor((Math.random() * 50) + 1);
+    this.half_size = Math.floor((Math.random() * 40) + 1);
     this.x = Math.floor((Math.random() * c.width) + 1);
     this.y = Math.floor((Math.random() * c.height) + 1);
     this.r = Math.random() * Math.PI;
-    this.shadow_length = 2000;
+    this.shadow_length = 0;
     this.color = colors[Math.floor((Math.random() * colors.length))];
   
     this.getDots = function() {
@@ -144,7 +144,7 @@ function draw() {
 resize();
 draw();
 
-while (boxes.length < 88) {
+while (boxes.length < 25) {
     boxes.push(new Box());
 }
 

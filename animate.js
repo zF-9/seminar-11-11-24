@@ -1,5 +1,6 @@
 $(document).ready(function() {
     $("#canvas").hide();
+    $('#background-video').hide();
 
     if (localStorage.getItem('ribbonCut') != 'cut') {
         $('.ribbon').delay(2500).fadeIn();
@@ -14,7 +15,10 @@ $(document).ready(function() {
 
         localStorage.setItem('ribbonCut','cut')
 
-        $("#canvas").delay(800).fadeIn();
+        $("#canvas").delay(1000).fadeIn();
+        $("#canvas").hide();
+        $('#background-video').delay(5000).fadeIn();
+        
     });
 });
 
